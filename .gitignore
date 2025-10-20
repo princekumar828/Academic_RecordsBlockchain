@@ -1,0 +1,33 @@
+# Hyperledger Fabric
+organizations/
+system-genesis-block/*.block
+channel-artifacts/*.tx
+channel-artifacts/*.block
+*.tar.gz
+
+# Go
+vendor/
+*.sum
+
+# Node
+node_modules/
+dist/
+wallet/
+*.log
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Docker
+*.pid
