@@ -129,8 +129,6 @@ sudo nano /etc/hosts
 **Add these lines:**
 ```
 127.0.0.1 orderer.nitw.edu
-127.0.0.1 orderer2.nitw.edu
-127.0.0.1 orderer3.nitw.edu
 127.0.0.1 peer0.nitwarangal.nitw.edu
 127.0.0.1 peer1.nitwarangal.nitw.edu
 127.0.0.1 peer0.departments.nitw.edu
@@ -199,7 +197,7 @@ export FABRIC_CFG_PATH=${PWD}/configtx
 docker-compose -f docker/docker-compose-net.yaml up -d
 ```
 - [ ] All containers started
-- [ ] Run `docker ps` - should show 8 containers
+- [ ] Run `docker ps` - should show 7 containers (1 orderer + 5 peers + 1 cli)
 
 ### 5.2 Verify Container Health
 ```bash
@@ -404,7 +402,7 @@ nohup npm run dev > api-server.log 2>&1 &
 # All containers running
 docker ps
 ```
-- [ ] 8 containers running
+- [ ] 7 containers running (1 orderer + 5 peers + 1 cli)
 
 ### 10.2 API Health
 ```bash
@@ -444,7 +442,7 @@ curl -X POST http://localhost:3000/api/students \
 
 - [ ] All prerequisites installed
 - [ ] Hyperledger Fabric binaries present
-- [ ] Docker containers running (8 total)
+- [ ] Docker containers running (7 total: 1 orderer + 5 peers + 1 cli)
 - [ ] Channel created and peers joined
 - [ ] Chaincode v1.2 deployed and committed
 - [ ] CLI test successful (CreateStudent & GetStudent)

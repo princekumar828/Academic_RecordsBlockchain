@@ -142,8 +142,6 @@ sudo nano /etc/hosts
 **Add these lines:**
 ```
 127.0.0.1 orderer.nitw.edu
-127.0.0.1 orderer2.nitw.edu
-127.0.0.1 orderer3.nitw.edu
 127.0.0.1 peer0.nitwarangal.nitw.edu
 127.0.0.1 peer1.nitwarangal.nitw.edu
 127.0.0.1 peer0.departments.nitw.edu
@@ -169,10 +167,8 @@ docker-compose -f docker/docker-compose-net.yaml up -d
 docker ps
 ```
 
-**Expected Output:** 8 containers running
+**Expected Output:** 7 containers running
 - orderer.nitw.edu
-- orderer2.nitw.edu (may be inactive)
-- orderer3.nitw.edu (may be inactive)
 - peer0.nitwarangal.nitw.edu
 - peer1.nitwarangal.nitw.edu
 - peer0.departments.nitw.edu
@@ -723,7 +719,7 @@ rm -f academic_records_*.tar.gz
 
 ## 📊 Success Verification Checklist
 
-- [ ] All 8 Docker containers running
+- [ ] All 7 Docker containers running (1 orderer + 5 peers + 1 cli)
 - [ ] Channel created successfully
 - [ ] All 5 peers joined channel
 - [ ] Chaincode installed on 3 peers

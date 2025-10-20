@@ -41,13 +41,15 @@ A production-ready blockchain-based academic records management system built on 
 │  └────────────────┘  └────────────────┘  └────────────────┘│
 │                                                               │
 │  ┌───────────────────────────────────────────────────────┐  │
-│  │         Orderer Service (Raft Consensus)              │  │
-│  │         • orderer.nitw.edu:7050                       │  │
+│  │    Orderer Service (Single-Node Raft Consensus)       │  │
+│  │         • orderer.nitw.edu:7050 (Port 7050)           │  │
+│  │         • Admin: 7053 | Operations: 9443              │  │
 │  └───────────────────────────────────────────────────────┘  │
 │                                                               │
 │  ┌───────────────────────────────────────────────────────┐  │
 │  │      Channel: academic-records-channel                │  │
 │  │      Smart Contract: academic-records v1.2            │  │
+│  │      Total Containers: 7 (1 orderer + 5 peers + cli)  │  │
 │  └───────────────────────────────────────────────────────┘  │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -104,6 +106,7 @@ We provide comprehensive documentation for all aspects of the project:
 | **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)** | ⚡ Daily operations guide | Quick commands |
 | **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** | 🔧 Problem solving guide | When issues arise |
 | **[IMPLEMENTATION_SUCCESS_SUMMARY.md](IMPLEMENTATION_SUCCESS_SUMMARY.md)** | 📊 Project overview | Understanding the system |
+| **[ORDERER_CONFIG_UPDATE.md](ORDERER_CONFIG_UPDATE.md)** | ✅ Single orderer config changes | What changed and why |
 | **[NEXT_STEPS.md](NEXT_STEPS.md)** | 🎯 Future enhancements | Planning improvements |
 
 **Start Here:** [DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md) for complete navigation

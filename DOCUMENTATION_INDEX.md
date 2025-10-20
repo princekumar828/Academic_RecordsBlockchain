@@ -20,6 +20,8 @@ Welcome to the comprehensive documentation for the NIT Warangal Academic Records
 
 ### For Project Understanding
 - **[IMPLEMENTATION_SUCCESS_SUMMARY.md](IMPLEMENTATION_SUCCESS_SUMMARY.md)** - Complete project overview
+- **[ORDERER_CONFIG_UPDATE.md](ORDERER_CONFIG_UPDATE.md)** - Single orderer configuration changes
+- **[NETWORK_CONFIG_SUMMARY.md](NETWORK_CONFIG_SUMMARY.md)** - Network analysis (historical)
 - **[NEXT_STEPS.md](NEXT_STEPS.md)** - Future enhancements and options
 
 ---
