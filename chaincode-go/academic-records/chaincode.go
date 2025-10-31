@@ -688,8 +688,8 @@ func (s *SmartContract) CreateAcademicRecord(ctx contractapi.TransactionContextI
 		return err
 	}
 
-	// 2. record~semester~student
-	recordSemesterKey, err := ctx.GetStub().CreateCompositeKey("record~semester~student", []string{
+	// 2. record~semester~{Semester}~{StudentID}~{RecordID}
+	recordSemesterKey, err := ctx.GetStub().CreateCompositeKey("record~semester", []string{
 		fmt.Sprintf("%d", semester), rollNumber, recordID,
 	})
 	if err != nil {
@@ -700,8 +700,8 @@ func (s *SmartContract) CreateAcademicRecord(ctx contractapi.TransactionContextI
 		return err
 	}
 
-	// 3. record~status~student
-	recordStatusKey, err := ctx.GetStub().CreateCompositeKey("record~status~student", []string{
+	// 3. record~status~{Status}~{StudentID}~{RecordID}
+	recordStatusKey, err := ctx.GetStub().CreateCompositeKey("record~status", []string{
 		record.Status, rollNumber, recordID,
 	})
 	if err != nil {
