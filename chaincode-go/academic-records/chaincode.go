@@ -19,21 +19,21 @@ type SmartContract struct {
 
 // Student represents a student in the system (Enhanced for Production)
 type Student struct {
-	StudentID        string    `json:"studentId"`
-	Name             string    `json:"name"`
-	Department       string    `json:"department"`
-	EnrollmentYear   int       `json:"enrollmentYear"`
-	RollNumber       string    `json:"rollNumber"`        // Primary ID
-	Email            string    `json:"email"`             // Must be @student.nitw.ac.in
-	Phone            string    `json:"phone,omitempty"`   // Optional, modifiable
-	PersonalEmail    string    `json:"personalEmail,omitempty"` // Optional, modifiable
-	AadhaarHash      string    `json:"aadhaarHash"`       // SHA256 hash of Aadhaar
-	AdmissionCategory string   `json:"admissionCategory"` // GEN, OBC, SC, ST, etc.
-	Status           string    `json:"status"`            // ACTIVE, GRADUATED, WITHDRAWN, CANCELLED, TEMPORARY_WITHDRAWAL
-	CreatedBy        string    `json:"createdBy"`
-	CreatedAt        time.Time `json:"createdAt"`
-	ModifiedBy       string    `json:"modifiedBy,omitempty"`
-	ModifiedAt       time.Time `json:"modifiedAt,omitempty"`
+	StudentID         string    `json:"studentId"`
+	Name              string    `json:"name"`
+	Department        string    `json:"department"`
+	EnrollmentYear    int       `json:"enrollmentYear"`
+	RollNumber        string    `json:"rollNumber"`        // Primary ID
+	Email             string    `json:"email"`             // Must be @student.nitw.ac.in
+	Phone             string    `json:"phone"`   // Optional, modifiable
+	PersonalEmail     string    `json:"personalEmail"` // Optional, modifiable
+	AadhaarHash       string    `json:"aadhaarHash"`       // SHA256 hash of Aadhaar
+	AdmissionCategory string    `json:"admissionCategory"` // GEN, OBC, SC, ST, etc.
+	Status            string    `json:"status"`            // ACTIVE, GRADUATED, WITHDRAWN, CANCELLED, TEMPORARY_WITHDRAWAL
+	CreatedBy         string    `json:"createdBy"`
+	CreatedAt         time.Time `json:"createdAt"`
+	ModifiedBy        string    `json:"modifiedBy"`
+	ModifiedAt        time.Time `json:"modifiedAt"`
 }
 
 // Course represents a single course (Enhanced with validation)
