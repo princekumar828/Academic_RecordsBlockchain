@@ -262,11 +262,19 @@ services:
       - GOPATH=/opt/gopath
       - FABRIC_LOGGING_SPEC=INFO
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
+      - FABRIC_CFG_PATH=/etc/hyperledger/fabric
+      - CORE_PEER_TLS_ENABLED=true
+      - CORE_PEER_LOCALMSPID=NITWarangalMSP
+      - CORE_PEER_ADDRESS=peer0.nitwarangal.nitw.edu:7051
+      - CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/organizations/peerOrganizations/nitwarangal.nitw.edu/peers/peer0.nitwarangal.nitw.edu/tls/ca.crt
+      - CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/organizations/peerOrganizations/nitwarangal.nitw.edu/users/Admin@nitwarangal.nitw.edu/msp
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: /bin/bash
     volumes:
       - ../organizations:/opt/gopath/src/github.com/hyperledger/fabric/peer/organizations
       - ../scripts:/opt/gopath/src/github.com/hyperledger/fabric/peer/scripts
+      - ../channel-artifacts:/opt/gopath/src/github.com/hyperledger/fabric/peer/channel-artifacts
+      - ../chaincode-go:/opt/gopath/src/github.com/hyperledger/fabric/peer/chaincode
     depends_on:
       - peer0.nitwarangal.nitw.edu
       - peer1.nitwarangal.nitw.edu

@@ -8,6 +8,8 @@ Welcome to the comprehensive documentation for the NIT Warangal Academic Records
 
 ## 🎯 Quick Navigation
 
+**Note:** All documentation is located in the `docs/` folder.
+
 ### For First-Time Setup
 - **[NEW_DEVICE_SETUP_CHECKLIST.md](NEW_DEVICE_SETUP_CHECKLIST.md)** ⭐ **START HERE**
 - **[COMPLETE_SETUP_GUIDE.md](COMPLETE_SETUP_GUIDE.md)** - Full command reference
@@ -15,13 +17,12 @@ Welcome to the comprehensive documentation for the NIT Warangal Academic Records
 ### For Daily Operations
 - **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)** - Common commands and operations
 
-### When Things Go Wrong
-- **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** - Solutions to common issues
-
 ### For Project Understanding
+- **[DEPLOYMENT_SUCCESS.md](DEPLOYMENT_SUCCESS.md)** - Current deployment status
 - **[IMPLEMENTATION_SUCCESS_SUMMARY.md](IMPLEMENTATION_SUCCESS_SUMMARY.md)** - Complete project overview
 - **[ORDERER_CONFIG_UPDATE.md](ORDERER_CONFIG_UPDATE.md)** - Single orderer configuration changes
 - **[NETWORK_CONFIG_SUMMARY.md](NETWORK_CONFIG_SUMMARY.md)** - Network analysis (historical)
+- **[CLEANUP_SUMMARY.md](CLEANUP_SUMMARY.md)** - Cleanup and maintenance
 - **[NEXT_STEPS.md](NEXT_STEPS.md)** - Future enhancements and options
 
 ---
@@ -125,26 +126,17 @@ Welcome to the comprehensive documentation for the NIT Warangal Academic Records
 ### Scenario 1: "I'm setting up for the first time on a new Mac"
 1. ✅ Read **[NEW_DEVICE_SETUP_CHECKLIST.md](NEW_DEVICE_SETUP_CHECKLIST.md)**
 2. Follow **[COMPLETE_SETUP_GUIDE.md](COMPLETE_SETUP_GUIDE.md)** alongside
-3. Keep **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** open for any issues
 
 ---
 
-### Scenario 2: "The network was working, now it's not"
-1. ✅ Go to **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)**
-2. Find your error message in the table of contents
-3. Follow the solution steps
-4. Use health check script to verify fix
-
----
-
-### Scenario 3: "I need to restart the network after a reboot"
+### Scenario 2: "I need to restart the network after a reboot"
 1. ✅ Open **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)**
 2. Go to "Quick Start After System Reboot"
-3. Run the 4 commands listed
+3. Run the commands listed
 
 ---
 
-### Scenario 4: "I want to create a student via API"
+### Scenario 3: "I want to create a student via API"
 1. ✅ Open **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)**
 2. Go to "Common API Tests" section
 3. Copy the "Create Student" curl command
@@ -153,25 +145,25 @@ Welcome to the comprehensive documentation for the NIT Warangal Academic Records
 
 ---
 
-### Scenario 5: "I need to upgrade the chaincode"
+### Scenario 4: "I need to upgrade the chaincode"
 1. ✅ Open **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)**
 2. Go to "Chaincode Upgrade Process"
-3. Follow the 6 steps
+3. Follow the steps
 4. Increment version and sequence numbers
 
 ---
 
-### Scenario 6: "I want to show this project to someone"
+### Scenario 5: "I want to show this project to someone"
 1. ✅ Start with **[IMPLEMENTATION_SUCCESS_SUMMARY.md](IMPLEMENTATION_SUCCESS_SUMMARY.md)**
 2. Show the architecture diagram section
 3. Demonstrate API endpoints
-4. Show test results
+4. Show test results from **[DEPLOYMENT_SUCCESS.md](DEPLOYMENT_SUCCESS.md)**
 
 ---
 
-### Scenario 7: "I want to add new features"
+### Scenario 6: "I want to add new features"
 1. ✅ Read **[NEXT_STEPS.md](NEXT_STEPS.md)**
-2. Choose from 10 enhancement options
+2. Choose from enhancement options
 3. Follow implementation guidelines
 4. Test using **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)** commands
 
@@ -182,15 +174,19 @@ Welcome to the comprehensive documentation for the NIT Warangal Academic Records
 ```
 nit-warangal-network/
 │
-├── 📄 Documentation (You are here)
-│   ├── 📗 NEW_DEVICE_SETUP_CHECKLIST.md    ⭐ Start here for new setup
-│   ├── 📘 COMPLETE_SETUP_GUIDE.md           Full commands reference
-│   ├── 📙 QUICK_REFERENCE.md                Daily operations
-│   ├── 📕 TROUBLESHOOTING.md                Problem solving
-│   ├── 📔 IMPLEMENTATION_SUCCESS_SUMMARY.md Project overview
-│   ├── 📓 NEXT_STEPS.md                     Future enhancements
-│   ├── 📖 API_DOCUMENTATION.md              API endpoints
-│   └── 📚 DOCUMENTATION_INDEX.md            This file
+├── 📄 Documentation
+│   ├── README.md                            Main project readme
+│   └── docs/                                Documentation folder (You are here)
+│       ├── 📗 NEW_DEVICE_SETUP_CHECKLIST.md     ⭐ Start here for new setup
+│       ├── 📘 COMPLETE_SETUP_GUIDE.md            Full commands reference
+│       ├── 📙 QUICK_REFERENCE.md                 Daily operations
+│       ├── � DEPLOYMENT_SUCCESS.md              Latest deployment status
+│       ├── 📔 IMPLEMENTATION_SUCCESS_SUMMARY.md  Project overview
+│       ├── 📓 NEXT_STEPS.md                      Future enhancements
+│       ├── � ORDERER_CONFIG_UPDATE.md           Config changes
+│       ├── 📓 NETWORK_CONFIG_SUMMARY.md          Network details
+│       ├── 📓 CLEANUP_SUMMARY.md                 Cleanup info
+│       └── 📚 DOCUMENTATION_INDEX.md             This file
 │
 ├── 🔐 Network Configuration
 │   ├── crypto-config.yaml                   Certificate generation config
@@ -237,30 +233,30 @@ nit-warangal-network/
 
 **Network Operations:**
 - QUICK_REFERENCE.md → Starting/Stopping Network
-- TROUBLESHOOTING.md → Network Startup Issues
+- DEPLOYMENT_SUCCESS.md → Current status
 
 **Channel Management:**
 - COMPLETE_SETUP_GUIDE.md → Step 6
-- TROUBLESHOOTING.md → Channel Creation Issues
 
 **Chaincode:**
 - COMPLETE_SETUP_GUIDE.md → Step 7
 - QUICK_REFERENCE.md → Chaincode Upgrade Process
-- TROUBLESHOOTING.md → Chaincode Issues
+- DEPLOYMENT_SUCCESS.md → Deployment details
 
 **REST API:**
 - COMPLETE_SETUP_GUIDE.md → Steps 9-10
 - QUICK_REFERENCE.md → Common API Tests
-- API_DOCUMENTATION.md → Full endpoint reference
-- TROUBLESHOOTING.md → API Issues
+- DEPLOYMENT_SUCCESS.md → Available functions
 
 **Testing:**
 - COMPLETE_SETUP_GUIDE.md → Step 8
 - IMPLEMENTATION_SUCCESS_SUMMARY.md → Test Results
+- DEPLOYMENT_SUCCESS.md → Test cases
 
 **Understanding the System:**
 - IMPLEMENTATION_SUCCESS_SUMMARY.md → Architecture, Features
-- API_DOCUMENTATION.md → API capabilities
+- DEPLOYMENT_SUCCESS.md → Current status
+- NETWORK_CONFIG_SUMMARY.md → Network details
 
 **Future Development:**
 - NEXT_STEPS.md → All enhancement options
@@ -317,10 +313,12 @@ curl http://localhost:3000/api/students
 | NEW_DEVICE_SETUP_CHECKLIST.md | ~500 | Setup guide | 20 min |
 | COMPLETE_SETUP_GUIDE.md | ~700 | Full commands | 30 min |
 | QUICK_REFERENCE.md | ~400 | Quick lookup | 10 min |
-| TROUBLESHOOTING.md | ~600 | Problem solving | As needed |
+| DEPLOYMENT_SUCCESS.md | ~300 | Current status | 10 min |
 | IMPLEMENTATION_SUCCESS_SUMMARY.md | ~500 | Overview | 15 min |
 | NEXT_STEPS.md | ~300 | Future work | 10 min |
-| API_DOCUMENTATION.md | ~400 | API reference | 15 min |
+| ORDERER_CONFIG_UPDATE.md | ~200 | Config changes | 5 min |
+| NETWORK_CONFIG_SUMMARY.md | ~300 | Network details | 10 min |
+| CLEANUP_SUMMARY.md | ~200 | Maintenance | 5 min |
 
 ---
 
@@ -331,15 +329,16 @@ curl http://localhost:3000/api/students
 2. COMPLETE_SETUP_GUIDE.md (follow step-by-step)
 3. QUICK_REFERENCE.md (bookmark for later)
 4. IMPLEMENTATION_SUCCESS_SUMMARY.md (understand what you built)
+5. DEPLOYMENT_SUCCESS.md (verify current status)
 
 ### For Experienced Users:
 1. QUICK_REFERENCE.md (daily operations)
-2. TROUBLESHOOTING.md (keep open while working)
+2. DEPLOYMENT_SUCCESS.md (current status)
 3. NEXT_STEPS.md (when ready to enhance)
 
 ### For Project Managers/Reviewers:
 1. IMPLEMENTATION_SUCCESS_SUMMARY.md (project overview)
-2. API_DOCUMENTATION.md (capabilities)
+2. DEPLOYMENT_SUCCESS.md (current status)
 3. NEXT_STEPS.md (future roadmap)
 
 ---
@@ -347,16 +346,16 @@ curl http://localhost:3000/api/students
 ## 🆘 Emergency Quick Fixes
 
 ### "Nothing is working!"
-→ **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** → Complete Reset
+→ Check **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)** → Network restart commands
 
 ### "Containers won't start"
-→ **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** → Docker Issues
+→ **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)** → Docker commands
 
 ### "Can't connect to peer"
-→ **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** → Network Startup Issues
+→ **[DEPLOYMENT_SUCCESS.md](DEPLOYMENT_SUCCESS.md)** → Network endpoints
 
 ### "API returns errors"
-→ **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** → API Issues
+→ **[DEPLOYMENT_SUCCESS.md](DEPLOYMENT_SUCCESS.md)** → Available functions
 
 ### "Need to start from scratch"
 → **[NEW_DEVICE_SETUP_CHECKLIST.md](NEW_DEVICE_SETUP_CHECKLIST.md)**
@@ -420,14 +419,14 @@ curl http://localhost:3000/api/students
 
 - ✅ Setup instructions
 - ✅ Daily operations guide
-- ✅ Troubleshooting solutions
-- ✅ API documentation
 - ✅ Project overview
+- ✅ Deployment status
 - ✅ Future enhancements
 - ✅ Code examples
 - ✅ Test results
 - ✅ Architecture diagrams
 - ✅ Quick reference commands
+- ✅ Network configuration details
 
 **100% Documentation Coverage** 🎉
 

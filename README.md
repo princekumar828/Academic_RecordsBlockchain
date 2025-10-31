@@ -90,26 +90,28 @@ cd ~/hyperledger/fabric-samples/
 cd nit-warangal-network
 ```
 
-📚 **Read the complete setup guide:** [NEW_DEVICE_SETUP_CHECKLIST.md](NEW_DEVICE_SETUP_CHECKLIST.md)
+📚 **Read the complete setup guide:** [docs/NEW_DEVICE_SETUP_CHECKLIST.md](docs/NEW_DEVICE_SETUP_CHECKLIST.md)
 
 ---
 
 ## 📚 Documentation
 
-We provide comprehensive documentation for all aspects of the project:
+We provide comprehensive documentation for all aspects of the project (located in the `docs/` folder):
 
 | Document | Description | Best For |
 |----------|-------------|----------|
-| **[DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md)** | 📑 Master index to all docs | Finding the right guide |
-| **[NEW_DEVICE_SETUP_CHECKLIST.md](NEW_DEVICE_SETUP_CHECKLIST.md)** | ✅ Step-by-step setup checklist | First-time setup |
-| **[COMPLETE_SETUP_GUIDE.md](COMPLETE_SETUP_GUIDE.md)** | 📗 Full command reference | Detailed setup |
-| **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)** | ⚡ Daily operations guide | Quick commands |
-| **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** | 🔧 Problem solving guide | When issues arise |
-| **[IMPLEMENTATION_SUCCESS_SUMMARY.md](IMPLEMENTATION_SUCCESS_SUMMARY.md)** | 📊 Project overview | Understanding the system |
-| **[ORDERER_CONFIG_UPDATE.md](ORDERER_CONFIG_UPDATE.md)** | ✅ Single orderer config changes | What changed and why |
-| **[NEXT_STEPS.md](NEXT_STEPS.md)** | 🎯 Future enhancements | Planning improvements |
+| **[DOCUMENTATION_INDEX.md](docs/DOCUMENTATION_INDEX.md)** | 📑 Master index to all docs | Finding the right guide |
+| **[NEW_DEVICE_SETUP_CHECKLIST.md](docs/NEW_DEVICE_SETUP_CHECKLIST.md)** | ✅ Step-by-step setup checklist | First-time setup |
+| **[COMPLETE_SETUP_GUIDE.md](docs/COMPLETE_SETUP_GUIDE.md)** | 📗 Full command reference | Detailed setup |
+| **[QUICK_REFERENCE.md](docs/QUICK_REFERENCE.md)** | ⚡ Daily operations guide | Quick commands |
+| **[DEPLOYMENT_SUCCESS.md](docs/DEPLOYMENT_SUCCESS.md)** | 🎉 Deployment summary | Current deployment status |
+| **[IMPLEMENTATION_SUCCESS_SUMMARY.md](docs/IMPLEMENTATION_SUCCESS_SUMMARY.md)** | 📊 Project overview | Understanding the system |
+| **[ORDERER_CONFIG_UPDATE.md](docs/ORDERER_CONFIG_UPDATE.md)** | ✅ Single orderer config changes | What changed and why |
+| **[NEXT_STEPS.md](docs/NEXT_STEPS.md)** | 🎯 Future enhancements | Planning improvements |
+| **[NETWORK_CONFIG_SUMMARY.md](docs/NETWORK_CONFIG_SUMMARY.md)** | 🔧 Network configuration details | Network settings |
+| **[CLEANUP_SUMMARY.md](docs/CLEANUP_SUMMARY.md)** | 🧹 Cleanup and maintenance | File management |
 
-**Start Here:** [DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md) for complete navigation
+**Start Here:** [docs/DOCUMENTATION_INDEX.md](docs/DOCUMENTATION_INDEX.md) for complete navigation
 
 ---
 
@@ -209,13 +211,17 @@ See **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)** for more examples.
 nit-warangal-network/
 ├── 📄 Documentation
 │   ├── README.md                           ← You are here
-│   ├── DOCUMENTATION_INDEX.md              Complete guide index
-│   ├── NEW_DEVICE_SETUP_CHECKLIST.md       Setup checklist
-│   ├── COMPLETE_SETUP_GUIDE.md             Full setup guide
-│   ├── QUICK_REFERENCE.md                  Quick commands
-│   ├── TROUBLESHOOTING.md                  Problem solving
-│   ├── IMPLEMENTATION_SUCCESS_SUMMARY.md   Project summary
-│   └── NEXT_STEPS.md                       Future work
+│   └── docs/                               Documentation folder
+│       ├── DOCUMENTATION_INDEX.md          Complete guide index
+│       ├── NEW_DEVICE_SETUP_CHECKLIST.md   Setup checklist
+│       ├── COMPLETE_SETUP_GUIDE.md         Full setup guide
+│       ├── QUICK_REFERENCE.md              Quick commands
+│       ├── DEPLOYMENT_SUCCESS.md           Deployment summary
+│       ├── IMPLEMENTATION_SUCCESS_SUMMARY.md Project summary
+│       ├── ORDERER_CONFIG_UPDATE.md        Config changes
+│       ├── NETWORK_CONFIG_SUMMARY.md       Network details
+│       ├── CLEANUP_SUMMARY.md              Cleanup info
+│       └── NEXT_STEPS.md                   Future work
 │
 ├── 🔐 Network Configuration
 │   ├── crypto-config.yaml                  Certificate config
@@ -296,8 +302,8 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 
 For issues and questions:
 
-- 📖 Check [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
-- 📚 Read [DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md)
+- 📖 Check [docs/QUICK_REFERENCE.md](docs/QUICK_REFERENCE.md)
+- 📚 Read [docs/DOCUMENTATION_INDEX.md](docs/DOCUMENTATION_INDEX.md)
 - 💬 Open an issue on GitHub
 - 🌐 Visit [Hyperledger Fabric Documentation](https://hyperledger-fabric.readthedocs.io/)
 
@@ -327,7 +333,7 @@ curl http://localhost:3000/health
 docker-compose -f docker/docker-compose-net.yaml down
 ```
 
-For complete commands, see **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)**
+For complete commands, see **[docs/QUICK_REFERENCE.md](docs/QUICK_REFERENCE.md)**
 
 ---
 
@@ -347,8 +353,11 @@ For complete commands, see **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)**
 
 <div align="center">
 
+
 **Built with ❤️ using Hyperledger Fabric**
 
-[Documentation](DOCUMENTATION_INDEX.md) • [Setup Guide](NEW_DEVICE_SETUP_CHECKLIST.md) • [Quick Reference](QUICK_REFERENCE.md) • [Troubleshooting](TROUBLESHOOTING.md)
+[Documentation](docs/DOCUMENTATION_INDEX.md) • [Setup Guide](docs/NEW_DEVICE_SETUP_CHECKLIST.md) • [Quick Reference](docs/QUICK_REFERENCE.md) • [Deployment Status](docs/DEPLOYMENT_SUCCESS.md)
 
 </div>
+
+````

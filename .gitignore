@@ -1,8 +1,9 @@
 # Hyperledger Fabric
 organizations/
-system-genesis-block/*.block
-channel-artifacts/*.tx
-channel-artifacts/*.block
+system-genesis-block/*
+!system-genesis-block/.gitkeep
+channel-artifacts/*
+!channel-artifacts/.gitkeep
 *.tar.gz
 
 # Go
@@ -14,10 +15,18 @@ node_modules/
 dist/
 wallet/
 *.log
+nohup.out
+api-server.log
+coverage/
+.nyc_output/
+.eslintcache
+*.tsbuildinfo
+.cache/
 
 # Environment
 .env
 .env.local
+.env.*.local
 
 # OS
 .DS_Store
