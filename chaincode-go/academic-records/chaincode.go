@@ -59,7 +59,7 @@ type AcademicRecord struct {
 	SubmittedBy   string    `json:"submittedBy"`   // Faculty who submitted
 	ApprovedBy    string    `json:"approvedBy"`    // Dean/Registrar who approved
 	Status        string    `json:"status"`        // DRAFT, SUBMITTED, APPROVED
-	RejectionNote string    `json:"rejectionNote,omitempty"` // If sent back for corrections
+	RejectionNote string    `json:"rejectionNote"` // If sent back for corrections
 }
 
 // Certificate represents a certificate issued to a student (Enhanced)
@@ -651,18 +651,19 @@ func (s *SmartContract) CreateAcademicRecord(ctx contractapi.TransactionContextI
 
 	// Create academic record with DRAFT status initially
 	record := AcademicRecord{
-		RecordID:     recordID,
-		StudentID:    rollNumber, // Using rollNumber as student identifier
-		Department:   department,
-		Semester:     semester,
-		Courses:      courses,
-		TotalCredits: totalCredits,
-		SGPA:         sgpa,
-		CGPA:         0.0, // Will be calculated on approval
-		Timestamp:    timestamp,
-		SubmittedBy:  clientID,
-		Status:       StatusDraft,
-		ApprovedBy:   "",
+		RecordID:      recordID,
+		StudentID:     rollNumber, // Using rollNumber as student identifier
+		Department:    department,
+		Semester:      semester,
+		Courses:       courses,
+		TotalCredits:  totalCredits,
+		SGPA:          sgpa,
+		CGPA:          0.0, // Will be calculated on approval
+		Timestamp:     timestamp,
+		SubmittedBy:   clientID,
+		Status:        StatusDraft,
+		ApprovedBy:    "",
+		RejectionNote: "", // Initialize to empty string
 	}
 
 	recordJSONBytes, err := json.Marshal(record)
