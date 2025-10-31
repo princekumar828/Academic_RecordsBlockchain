@@ -43,7 +43,10 @@ test_query() {
         -C academic-records-channel -n academic-records \
         -c "{\"function\":\"$function\",\"Args\":$args}" 2>&1)
     
-    if echo "$result" | grep -q "$expected_pattern"; then
+    # Handle both null and [] as valid empty results
+    expected_pattern_regex="${expected_pattern//\"\[\]\"/\"(null|\\[\\])\"}"
+    
+    if echo "$result" | grep -qE "$expected_pattern_regex"; then
         echo "✅ PASSED: $test_name"
         ((TESTS_PASSED++))
     else

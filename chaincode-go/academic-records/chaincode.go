@@ -1230,11 +1230,10 @@ func (s *SmartContract) GetStudentHistory(ctx contractapi.TransactionContextInte
 
 // GetAllStudents retrieves all students
 func (s *SmartContract) GetAllStudents(ctx contractapi.TransactionContextInterface) ([]*Student, error) {
-	// Use composite key to query all students
-	// Format: student~{studentID}
-	resultsIterator, err := ctx.GetStub().GetStateByPartialCompositeKey("student", []string{})
+	// Query all keys in the ledger and filter for Student objects
+	resultsIterator, err := ctx.GetStub().GetStateByRange("", "")
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to get state by range: %v", err)
 	}
 	defer resultsIterator.Close()
 
@@ -1242,15 +1241,26 @@ func (s *SmartContract) GetAllStudents(ctx contractapi.TransactionContextInterfa
 	for resultsIterator.HasNext() {
 		queryResponse, err := resultsIterator.Next()
 		if err != nil {
-			return nil, err
+			return nil, fmt.Errorf("failed to iterate results: %v", err)
 		}
 
+		// Skip composite keys (they contain null byte 0x00)
+		if len(queryResponse.Key) == 0 || queryResponse.Key[0] == 0x00 {
+			continue
+		}
+
+		// Try to unmarshal as Student
 		var student Student
 		err = json.Unmarshal(queryResponse.Value, &student)
 		if err != nil {
-			return nil, err
+			// Not a student object, skip
+			continue
 		}
-		students = append(students, &student)
+
+		// Verify it's actually a Student by checking required fields
+		if student.RollNumber != "" && student.Department != "" {
+			students = append(students, &student)
+		}
 	}
 
 	return students, nil
