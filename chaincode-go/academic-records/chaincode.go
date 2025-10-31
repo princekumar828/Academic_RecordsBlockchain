@@ -309,11 +309,15 @@ func (s *SmartContract) CreateStudent(ctx contractapi.TransactionContextInterfac
 		EnrollmentYear:   enrollmentYear,
 		RollNumber:       rollNumber,
 		Email:            email,
+		Phone:            "", // Empty initially, can be updated later
+		PersonalEmail:    "", // Empty initially, can be updated later
 		AadhaarHash:      aadhaarHash,
 		AdmissionCategory: admissionCategory,
 		Status:           StatusActive,
 		CreatedBy:        clientID,
 		CreatedAt:        timestamp,
+		ModifiedBy:       clientID,
+		ModifiedAt:       timestamp,
 	}
 
 	studentJSON, err := json.Marshal(student)

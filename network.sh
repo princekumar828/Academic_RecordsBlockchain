@@ -219,7 +219,7 @@ testChaincode() {
     --tls --cafile ${ORDERER_CA} -C ${CHANNEL_NAME} -n ${CHAINCODE_NAME} \
     --peerAddresses peer0.nitwarangal.nitw.edu:7051 --tlsRootCertFiles /opt/gopath/src/github.com/hyperledger/fabric/peer/organizations/peerOrganizations/nitwarangal.nitw.edu/peers/peer0.nitwarangal.nitw.edu/tls/ca.crt \
     --peerAddresses peer0.departments.nitw.edu:9051 --tlsRootCertFiles /opt/gopath/src/github.com/hyperledger/fabric/peer/organizations/peerOrganizations/departments.nitw.edu/peers/peer0.departments.nitw.edu/tls/ca.crt \
-    -c '{"function":"CreateStudent","Args":["S001","John Doe","Computer Science","2021","CS21B001","john.doe@student.nitw.ac.in"]}'
+    -c '{"function":"CreateStudent","Args":["CS21B001","John Doe","CSE","2021","john.doe@student.nitw.ac.in","abc123hash","GENERAL"]}'
   
   echo "⏳ Waiting for transaction to be committed..."
   sleep 5
@@ -230,7 +230,7 @@ testChaincode() {
     -e CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/organizations/peerOrganizations/nitwarangal.nitw.edu/users/Admin@nitwarangal.nitw.edu/msp \
     -e CORE_PEER_ADDRESS=peer0.nitwarangal.nitw.edu:7051 cli peer chaincode query \
     -C ${CHANNEL_NAME} -n ${CHAINCODE_NAME} \
-    -c '{"function":"GetStudent","Args":["S001"]}'
+    -c '{"function":"GetStudent","Args":["CS21B001"]}'
   
   echo "✓ Chaincode test completed successfully!"
 }
