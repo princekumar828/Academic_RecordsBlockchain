@@ -64,19 +64,19 @@ type AcademicRecord struct {
 
 // Certificate represents a certificate issued to a student (Enhanced)
 type Certificate struct {
-	CertificateID string    `json:"certificateId"`
-	StudentID     string    `json:"studentId"`
-	Type          string    `json:"type"` // DEGREE, TRANSCRIPT, PROVISIONAL, BONAFIDE, MIGRATION, CHARACTER, STUDY_CONDUCT
-	IssueDate     time.Time `json:"issueDate"`
-	ExpiryDate    time.Time `json:"expiryDate,omitempty"` // For BONAFIDE
-	PDFHash       string    `json:"pdfHash"`
-	IPFSHash      string    `json:"ipfsHash"`
-	IssuedBy      string    `json:"issuedBy"`
-	Verified      bool      `json:"verified"`
-	Revoked       bool      `json:"revoked,omitempty"`
-	RevokedBy     string    `json:"revokedBy,omitempty"`
-	RevokedAt     time.Time `json:"revokedAt,omitempty"`
-	RevocationReason string `json:"revocationReason,omitempty"`
+	CertificateID    string    `json:"certificateId"`
+	StudentID        string    `json:"studentId"`
+	Type             string    `json:"type"` // DEGREE, TRANSCRIPT, PROVISIONAL, BONAFIDE, MIGRATION, CHARACTER, STUDY_CONDUCT
+	IssueDate        time.Time `json:"issueDate"`
+	ExpiryDate       time.Time `json:"expiryDate,omitempty"` // For BONAFIDE
+	PDFHash          string    `json:"pdfHash"`
+	IPFSHash         string    `json:"ipfsHash"`
+	IssuedBy         string    `json:"issuedBy"`
+	Verified         bool      `json:"verified"`
+	Revoked          bool      `json:"revoked"`
+	RevokedBy        string    `json:"revokedBy"`
+	RevokedAt        time.Time `json:"revokedAt"`
+	RevocationReason string    `json:"revocationReason"`
 }
 
 // Constants for validation
